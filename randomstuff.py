@@ -9,10 +9,6 @@ class Random(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def say(self, ctx, *, X):
-        await ctx.message.delete()
-        await ctx.send('`' + X + '`')
 
     @commands.command()
     async def vote(self, ctx, length: int, *, question):

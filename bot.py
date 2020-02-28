@@ -55,8 +55,9 @@ async def load(ctx, ext):
     await ctx.send(f"**{ext}** has been loaded")
 
 @bot.command()
-async def say(ctx, *, msg):
-    await ctx.send(f"**{msg}**")
+async def say(ctx, *, X):
+    await ctx.message.delete()
+    await ctx.send('`' + X + '`')
 
 
 @bot.command()
