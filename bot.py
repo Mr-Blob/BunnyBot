@@ -98,6 +98,7 @@ async def on_message_delete(message):
     em = discord.Embed(title='Message Deleted', colour=0x0000ff)
     em.add_field(name='Member:', value=message.author, inline=False)
     em.add_field(name='Message', value=message.content, inline=False)
+    em.add_field(name='Channel:', value=f'<#{message.channel.id}>', inline=False)
     channel = discord.utils.get(message.guild.channels, name='carrot_farm')
     await channel.send(embed=em)
 
@@ -109,6 +110,7 @@ async def on_message_edit(before, after):
         em.add_field(name='Member:', value=before.author, inline=False)
         em.add_field(name='Before:', value=before.content, inline=False)
         em.add_field(name='After:', value=after.content, inline=False)
+        em.add_field(name='Channel:', value=f'<#{before.channel.id}>', inline=False)
         channel = discord.utils.get(before.guild.channels, name='carrot_farm')
         await channel.send(embed=em)
     
