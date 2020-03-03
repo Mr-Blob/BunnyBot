@@ -104,7 +104,7 @@ async def on_message_delete(message):
 
 @bot.event
 async def on_message_edit(before, after):
-    if before.author.bot != False:
+    if before.author.bot == False:
         em = discord.Embed(title='Message Edit')
         em.add_field(name='Member:', value=before.author, inline=False)
         em.add_field(name='Before:', value=before, inline=False)
