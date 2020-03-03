@@ -91,6 +91,11 @@ async def help(ctx, command: str = None):
     em = discord.Embed(title="Help", colour=1467647)
     em.add_field(name="help", value="Shows this menu", inline=False)
     em.add_field(name="say", value="Says back the message...", inline=False)
+    em.add_field(name="google", value="Googles the search term", inline=False)
+    em.add_field(name="wiki", value="Shows a link to the Hoggit Wiki", inline=False)
+    em.add_field(name="guides", value="Shows a link to the relevant Chuck's Guide", inline=False)
+    em.add_field(name="f", value="f", inline=False)
+    em.add_field(name="vote", value="Votes on things ig...", inline=False)
     await ctx.send(embed=em)
 
 @bot.event
