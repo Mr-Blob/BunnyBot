@@ -54,6 +54,7 @@ async def load(ctx, ext):
     bot.load_extension(ext)
     await ctx.send(f"**{ext}** has been loaded")
 
+
 @bot.command()
 async def say(ctx, *, X):
     await ctx.message.delete()
@@ -61,23 +62,19 @@ async def say(ctx, *, X):
 
 
 @bot.command()
-async def guides(ctx, sel: str = None):
-    if sel != None:
-        if sel.lower() == "f18":
-            await ctx.send("https://www.mudspike.com/chucks-guides-dcs-f-a-18c-hornet/")
-        elif sel.lower() == "a10":
-            await ctx.send("https://www.mudspike.com/chucks-guides-dcs-a-10c-warthog/")
-        elif sel.lower() == "f14":
-            await ctx.send("https://www.mudspike.com/chucks-guides-dcs-f-14b-tomcat/")
+async def guides(ctx, sel: str):
+    if sel.lower() == "f18":
+        await ctx.send("https://www.mudspike.com/chucks-guides-dcs-f-a-18c-hornet/")
+    elif sel.lower() == "a10":
+        await ctx.send("https://www.mudspike.com/chucks-guides-dcs-a-10c-warthog/")
+    elif sel.lower() == "f14":
+        await ctx.send("https://www.mudspike.com/chucks-guides-dcs-f-14b-tomcat/")
     else:
         await ctx.send("https://www.mudspike.com/chucks-guides-dcs/")
 
 
 @bot.command()
 async def wiki(ctx, sel: str = None):
-    if sel != None:
-        pass
-    else:
         await ctx.send("https://wiki.hoggitworld.com/view/Hoggit_DCS_World_Wiki/")
 
 
