@@ -92,6 +92,24 @@ async def help(ctx, command: str = None):
     em.add_field(name="help", value="Shows this menu", inline=False)
     em.add_field(name="say", value="Says back the message...", inline=False)
     await ctx.send(embed=em)
+
+    @bot.event
+    async def on_message_delete(message):
+        em = discord.Embed(title='Message Deleted', colour=0x0000ff)
+        em.add_field(name='Member:', value=message.author, inline=False)
+        em.add_field(name='Message', value=message.content, inline=False)
+        channel = discord.utils.get(message.guild.channels, name='carrot_farm')
+        await channel.send(embed=em)
+
+
+    @bot.event
+    async def on_message_edit(before, after):
+        em = discord.Embed(title='Message Edit')
+        em.add_field(name='Member:', value=before.author, inline=False)
+        em.add_field(name='Before:', value=before, inline=False)
+        em.add_field(name='After:', value=after, inline=False)
+        channel = discord.utils.get(before.guild.channels, name='carrot_farm')
+        await channel.send(embed=em)
     
 
 bot.run(os.environ['TOKEN'])
