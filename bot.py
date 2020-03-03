@@ -105,10 +105,10 @@ async def on_message_delete(message):
 @bot.event
 async def on_message_edit(before, after):
     if before.author.bot == False:
-        em = discord.Embed(title='Message Edit')
+        em = discord.Embed(title='Message Edit', colour=0xffe600)
         em.add_field(name='Member:', value=before.author, inline=False)
-        em.add_field(name='Before:', value=before.message.content, inline=False)
-        em.add_field(name='After:', value=after.message.content, inline=False)
+        em.add_field(name='Before:', value=before.content, inline=False)
+        em.add_field(name='After:', value=after.content, inline=False)
         channel = discord.utils.get(before.guild.channels, name='carrot_farm')
         await channel.send(embed=em)
     
