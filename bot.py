@@ -9,7 +9,7 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix=commands.when_mentioned_or("//"), pm_help=False)
 bot.remove_command("help")
 
-exts = ["REPL", "randomstuff"]
+exts = ["REPL", "randomstuff", "Logging"]
 
 
 @bot.listen()
